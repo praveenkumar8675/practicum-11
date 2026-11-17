@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fresh Fruit Market</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background: #f9fbf7;
+  }
+
+  h2 {
+    background: #2d6a4f;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .items img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    border: 2px solid #95d5b2;
+    display: block;
+    margin: 0 auto 5px;
+  }
+
+  .form-box {
+    width: 280px;
+    margin: auto;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px;
+    margin: 3px 0 8px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    padding: 8px;
+    background: #40916c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  #bill {
+    color: #1b4332;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <h2>FRESH FRUIT MARKET</h2>
+  <div class="items">
+    <div><img src="https://img.icons8.com/color/96/apple.png">Apple (Rs.100)</div>
+    <div><img src="https://img.icons8.com/color/96/mango.png">Mango (Rs.150)</div>
+    <div><img src="https://img.icons8.com/color/96/grapes.png">Grapes (Rs.120)</div>
+    <div><img src="https://img.icons8.com/color/96/orange.png">Orange (Rs.80)</div>
+  </div>
+  <div class="form-box">
+    Apple (Qty): <input type="number" id="f1" value="2">
+    Mango (Qty): <input type="number" id="f2" value="1">
+    Grapes (Qty): <input type="number" id="f3" value="2">
+    Orange (Qty): <input type="number" id="f4" value="1">
+    <button onclick="calc()">Calculate Bill</button>
+  </div>
+  <p id="bill">Total Price: Rs. 670</p>
+  <script>
+    function calc() {
+      let a = +document.getElementById("f1").value, m = +document.getElementById("f2").value;
+      let g = +document.getElementById("f3").value, o = +document.getElementById("f4").value;
+      if (a < 0 || m < 0 || g < 0 || o < 0) return alert("Quantities cannot be negative!");
+      document.getElementById("bill").innerText = "Total Price: Rs. " + (a*100 + m*150 + g*120 + o*80);
+    }
+  </script>
+</body>
+</html>
